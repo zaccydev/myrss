@@ -17,11 +17,12 @@ foreach ($xml->channel->item as $elt => $art) {
     $childM = $art->children($ns['media']);
     print $art->title;
     echo "<br/>";
-    print "<a href=\"$art->link\">lire</a>";
+    print "<a href=" . $art->link . ">lire</a>";
     echo "<br/>";
     print $art->description;
-    echo "<br/>";
-    //var_dump($childM);
     
+    echo "<br/>";
+    echo "<img src=" . $childM->content->attributes()->url . ">";
+   
     echo "<br/>";
 }
